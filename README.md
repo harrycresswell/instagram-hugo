@@ -4,6 +4,8 @@ A simple demonstration showing how to create an Instagram Feed on a [Hugo](https
 
 Find all the [code on Github](harrycresswell/instagram-hugo) or read [Instagram on Hugo websites](https://harrycresswell.com/writing/instagram-hugo-websites/) to find out how to get this set up with your own Instagram account.
 
+Checkout the [demo site](https://instagram-hugo.netlify.app/) to get an idea of what this does.
+
 ## Installation
 
 Clone this repository:
