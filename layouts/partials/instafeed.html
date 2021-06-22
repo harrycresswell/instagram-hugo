@@ -1,0 +1,20 @@
+{{ $dataJ := getJSON "https://profilepageimages.usecue.com/images/laselvahotyoga/images.json" }}
+<ul id="instafeed">
+{{ range first 10 $dataJ }}
+  {{ $media_type := .media_type | lower }}
+  {{ $image_small := .image_small }}
+  {{ $permalink := .permalink }}
+  {{ $caption := .caption }}
+  <li class="{{ $media_type }}" style="background-image: url('{{ $image_small }}')">
+    <a href="{{ $permalink }}" target="_blank" rel="noopener noreferrer">
+      {{if eq $media_type "image" }}
+        <img class="{{ $media_type }}" src="{{ $image_small }}" {{ with $caption }}alt="{{ . }}"{{ else }}alt=""{{ end }}>
+      {{ else if eq $media_type "video" }}
+        <img class="{{ $media_type  }}" src="{{ $image_small }}" {{ with $caption }}alt="{{ . }}"{{ else }}alt=""{{ end }}>
+      {{ else if eq $media_type "carousel_album" }}
+        <img class="{{ $media_type  }}" src="{{ $image_small }}" {{ with $caption }}alt="{{ . }}"{{ else }}alt=""{{ end }}>
+      {{ end }}
+    </a>
+  </li>
+{{ end }}
+</ul>

@@ -1,0 +1,7 @@
+{{ define "main" }}
+<article>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description | markdownify }}</p>
+    {{ partial "instafeed.html" . }}
+</article>
+{{ end }}
